@@ -10,7 +10,7 @@ footer_only_homepage: true
 footer_url: "https://github.com/rahul-bothra"
 footer_text: "Theme by rahul-bothra"
 
-profile-picture: assets/profile.png
+profile-picture: assets/headshot.jpg
 favicon_location: assets/favicon.ico
 
 permalink: /:year-:month-:day-:title/
@@ -22,4 +22,4 @@ navbar:
  - name: "About"
    link: "about"
  - name: "Resume"
-   link: "resume"
+   link: "resume.html"
