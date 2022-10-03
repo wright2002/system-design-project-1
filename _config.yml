@@ -20,6 +20,6 @@ sass:
 
 navbar:
  - name: "About"
-   link: "about"
+   link: "about.html"
  - name: "Resume"
-   link: "resume.html"
+   link: "resume"
