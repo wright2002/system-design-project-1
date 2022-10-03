@@ -1,10 +1,11 @@
-title: Parchment
-author: pro-panda
-subtitle: The life of a frustrated engineer
+title: Kyle Wright's Homepage
+author: Kyle Wright
+subtitle: Cybersecurity at Marist College
 
-url: "https://rahul-bothra.github.io"
-baseurl: "/parchment"
+url: "https://wright2002.github.io"
+baseurl: "/system-design-project-1"
 
+# Left to give credit to theme author
 footer_only_homepage: true
 footer_url: "https://github.com/rahul-bothra"
 footer_text: "Theme by rahul-bothra"
@@ -21,4 +22,4 @@ navbar:
  - name: "About"
    link: "about"
  - name: "Resume"
-   absolute-link: "https://rahul-bothra.github.io/CV.pdf"
+   link: "resume"
