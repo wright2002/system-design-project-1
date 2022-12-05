@@ -12,6 +12,9 @@
         <div class="content">
             {{ content }}
         </div>
+        {% if jekyll.environment == "production" %}
+            <script src="my-analytics-script.js"></script>
+        {% endif %}
         {% include footer.html %}
     </div>
 </body>
