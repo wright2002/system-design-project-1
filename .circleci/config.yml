@@ -9,7 +9,7 @@ jobs:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      - image: cimg/ruby:2.7.0p0
+      - image: cimg/ruby:3.1.2
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -23,7 +23,7 @@ jobs:
     steps:
        - add_ssh_keys:
           fingerprints:
-            - "36:3b:21:69:e4:68:db:35:f1:71:1c:da:5d:cb:ba:f2"
+            - "60:65:ba:6a:d2:1d:90:ae:62:46:af:70:45:d0:0d:d9"
        - run:
             name: Deploy Over SSH
             command: |
