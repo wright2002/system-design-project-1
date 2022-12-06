@@ -18,7 +18,7 @@ jobs:
       - run: bundle install
       - run: bundle exec jekyll build
       - persist_to_workspace:
-          root: .
+          root: /tmp
           paths:
             - _site
       - run: scp -r _site /home/circleci/mysite
@@ -33,7 +33,7 @@ jobs:
     resource_class: medium
     steps:
        - attach_workspace:
-          at: ./
+          at: /tmp
        - add_ssh_keys:
           fingerprints:
             - "60:65:ba:6a:d2:1d:90:ae:62:46:af:70:45:d0:0d:d9"
