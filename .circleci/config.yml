@@ -18,6 +18,7 @@ jobs:
       - run: bundle install
       - run: bundle exec jekyll build
       - run: scp -r _site /home/circleci/mysite
+      - run: sudo mkdir /var/www
       - run: sudo mv /home/circleci/mysite/* /var/www
       - persist_to_workspace:
           root: /var
