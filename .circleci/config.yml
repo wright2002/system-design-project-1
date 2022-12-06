@@ -21,10 +21,9 @@ jobs:
           root: .
           paths:
             - _site
-      - run: scp -r _site /home/circleci/_site
+      - run: scp -r _site /home/circleci/mysite
       - run: sudo mkdir /var/www
-      - run: sudo mkdir /var/www/mysite
-      - run: sudo mv /home/circleci/_site /var/www/mysite
+      - run: sudo mv /home/circleci/mysite /var/www/
       - run: ls /var/www/mysite/
 
 
