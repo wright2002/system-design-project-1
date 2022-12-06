@@ -21,10 +21,7 @@ jobs:
           root: .
           paths:
             - _site
-      - run: scp -r _site /home/circleci/mysite
-      - run: sudo mkdir /var/www
-      - run: sudo mv /home/circleci/mysite/* /var/www
-      - run: ls /var/www/mysite/
+
 
 
   deploy:
@@ -41,6 +38,9 @@ jobs:
             name: Deploy Over SSH
             command: |
               ssh -o StrictHostKeyChecking=no circleci@148.100.78.77 "sudo touch /tmp/testing.txt"
+        - run: ssh -o StrictHostKeyChecking=no circleci@148.100.78.77 "scp -r _site /home/circleci/mysite"
+        - run: ssh -o StrictHostKeyChecking=no circleci@148.100.78.77 "sudo mv /home/circleci/mysite/* /var/www"
+
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
