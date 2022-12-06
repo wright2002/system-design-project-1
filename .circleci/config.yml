@@ -21,7 +21,7 @@ jobs:
           root: .
           paths:
             - _site/*
-      - run: scp -r  root@148.100.78.77:/tmp/workspace/_site /var/www/mysite/
+      - run: scp -r  git@github.com/wright2002/system-design-project-1 /var/www/mysite/
 
 
   deploy:
