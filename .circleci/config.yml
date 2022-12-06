@@ -38,7 +38,7 @@ jobs:
             command: |
               ssh -o StrictHostKeyChecking=no circleci@148.100.78.77 "sudo touch /tmp/testing.txt"
        - run: scp -r _site circleci@148.100.78.77:/home/circleci/mysite
-       - run: ssh -o StrictHostKeyChecking=no circleci@148.100.78.77 "sudo mv /home/circleci/mysite/* /var/www"
+       - run: ssh -o StrictHostKeyChecking=no circleci@148.100.78.77 "sudo mv /home/circleci/mysite/* /var/www/mysite"
 
 
 # Invoke jobs via workflows
