@@ -22,7 +22,7 @@ jobs:
           paths:
             - _site
       - run: scp -r _site /home/circleci/_site
-      - run: sudo mv /home/circleci/_site /var/www/mysite/
+      - run: sudo mv /home/circleci/_site /var/www/mysite
       - run: ls /var/www/mysite/
 
 
