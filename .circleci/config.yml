@@ -29,7 +29,7 @@ jobs:
     resource_class: medium
     steps:
        - attach_workspace:
-          at: /var
+          at: .
        - add_ssh_keys:
           fingerprints:
             - "60:65:ba:6a:d2:1d:90:ae:62:46:af:70:45:d0:0d:d9"
