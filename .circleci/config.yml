@@ -21,7 +21,8 @@ jobs:
           root: .
           paths:
             - _site/*
-      - run: scp -r  _site /var/www/
+      - run: scp -r  _site /home/circleci/workspace/
+      - run: sudo mv /home/circleci/workspace/_site /var/www/
 
 
   deploy:
