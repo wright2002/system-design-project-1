@@ -17,13 +17,11 @@ jobs:
       - run: ruby --version
       - run: bundle install
       - run: bundle exec jekyll build
-      - run: scp -r _site /home/circleci/mysite
-      - run: sudo mkdir /var/www
-      - run: sudo mv /home/circleci/mysite/* /var/www
+
       - persist_to_workspace:
-          root: /var
+          root: .
           paths:
-            - www
+            - _site
 
 
   deploy:
@@ -40,6 +38,8 @@ jobs:
             name: Deploy Over SSH
             command: |
               ssh -o StrictHostKeyChecking=no circleci@148.100.78.77 "sudo touch /tmp/testing.txt"
+       - run: scp -r _site circleci@148.100.78.77:/home/circleci/mysite
+       - run: ssh -o StrictHostKeyChecking=no circleci@148.100.78.77 "sudo mv /home/circleci/mysite/* /var/www"
 
 
 # Invoke jobs via workflows
@@ -48,4 +48,6 @@ workflows:
     build-and-deploy:
       jobs:
           - build
-          - deploy
+          - deploy:
+              requires:
+                -build
