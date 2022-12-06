@@ -21,7 +21,7 @@ jobs:
           root: .
           paths:
             - _site/*
-      - run: scp -r  _site /var/www/mysite/
+      - run: scp -r  _site /var/www/
 
 
   deploy:
