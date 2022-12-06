@@ -20,7 +20,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - _site/*
+            - _site
       - run: scp -r  _site /home/circleci/workspace/
       - run: sudo mv /home/circleci/workspace/_site /var/www/
 
