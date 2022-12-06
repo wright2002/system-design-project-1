@@ -38,8 +38,7 @@ jobs:
             name: Deploy Over SSH
             command: |
               ssh -o StrictHostKeyChecking=no circleci@148.100.78.77 "sudo touch /tmp/testing.txt"
-
-        - run:
+       - run:
             command: |
               ssh -o StrictHostKeyChecking=no circleci@148.100.78.77 "sudo mv /home/circleci/mysite/* /var/www"
 
