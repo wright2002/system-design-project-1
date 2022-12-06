@@ -15,6 +15,10 @@ jobs:
     steps:
       - checkout
       - run: ruby --version
+        bundle install
+      - run:
+        bundle exec jekyll build
+
 
   deploy:
     machine:
@@ -33,5 +37,5 @@ jobs:
 workflows:
     build-and-deploy:
       jobs:
-          # - build
+          - build
           - deploy
