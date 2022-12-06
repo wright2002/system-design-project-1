@@ -17,12 +17,12 @@ jobs:
       - run: ruby --version
       - run: bundle install
       - run: bundle exec jekyll build
+      - run: scp -r _site /home/circleci/mysite
+      - run: sudo mv /home/circleci/mysite/* /var/www
       - persist_to_workspace:
-          root: .
+          root: /var
           paths:
-            - _site
-      - run: scp -r _site circleci@148.100.78.77:/home/circleci/mysite
-      - run: ssh -o StrictHostKeyChecking=no circleci@148.100.78.77 "sudo mv /home/circleci/mysite/* /var/www"
+            - www
 
 
   deploy:
@@ -31,7 +31,7 @@ jobs:
     resource_class: medium
     steps:
        - attach_workspace:
-          at: .
+          at: /var
        - add_ssh_keys:
           fingerprints:
             - "60:65:ba:6a:d2:1d:90:ae:62:46:af:70:45:d0:0d:d9"
